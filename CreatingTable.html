@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CreatingTable</title>
+        <style type="text/css">
+            h2
+            {
+                color:rgb(255, 55, 0);
+                background-color: rgb(162, 255, 0);
+                border-style: solid; 
+                border-color:rgb(170, 255, 0);
+                border-bottom-right-radius:50%;
+                border-top-right-radius: 50%;
+                font-family:Lucida Calligraphy;
+
+            }
+            h1
+            {
+                color: red;
+                background-color: rgb(255, 238, 0);
+                border-style: solid; 
+                border-color:rgb(162, 255, 0);
+                border-bottom-right-radius:50%;
+                border-top-right-radius: 50%;   
+                font-family:Lucida Calligraphy;
+                background: linear-gradient( rgb(0, 255, 38), yellow,  rgb(0, 255, 229));
+
+            }
+            b
+            {
+                color:darkred;
+            }
+            u
+            {
+                color:orangered;
+            }
+            i
+            {
+                color:blue;
+            }
+            p
+            {   
+                font-family:'Imprint MT Shadow';
+                font-weight:bolder;
+                color:blue;
+                padding-left: 50px;
+            } 
+            
+        </style>
+
+    </head>
+    <body>
+        <ul>
+        <li><a href="index.html" style="font-size: x-large;">Home Page</a></li>
+        <li><a href="constraint.html" style="font-size: xx-large;">Constraint</a></li>
+        </ul><hr/>   
+        <h1>Creating Table :-</h1>
+        <b>CREATE TABLE -</b> This command is used to create a new table.<br/>
+        <u>Syntax</u> :-
+        <p>CREATE TABLE tableName(fieldName type[(size)] [,fieldname type[(size)],...] ;</p>
+        <i>TableName - </i>Any valid identifier<br/>
+        <i>fieldName - </i>Any valid identifier<br/>
+        <i>size - </i>Number<br/>
+        <i>type - </i>Any valid oracle data type. Orcale comman data type:<br/>
+        <i>for numeric value - </i>Number<br/>
+        <i>for string value - </i>char, varchar2, nchar, nvarchar2<br/>
+        <u>Ex</u> :-<br/>   
+        Create a table in which we can store the name, gender, address, mobileno of our friends.<br/>
+        <b>CREATE TABLE</b> friends(name varchar2(30), gender char, address varchar2(50), mobileno char(10));<br/>
+        Create a table for storing students records as: name, class, roll, hin, eng, math, science.<br/>
+        <b>CREATE TABLE</b> students(name varchar2(30), class number(2), roll number(3), hin number(3), eng number(3), math number(3), science number(3));   
+        <hr/><h1>View structure of table :-</h1>
+        <b>DESCRIBE -</b> This command is used to view the structure of pre-created table.<br/>
+        <u>Syntax</u> :-
+        <p>DESC[RIBE] tableName ;</p>
+        <u>Ex</u> :-<br/>
+        <b>DESCRIBE</b> students;<br/>
+        or,<br/>
+        <b>DESC</b> students;
+        <hr/>
+        <h1>Inserting data in table :-</h1>
+        <b>INSERT -</b> This command is used to insert data in pre-created table.<br/>
+        <u>Syntax</u> :-
+        <p>INSERT INTO tableName VALUES(field1Value, field2Value, field3Value,...) ;</p>
+        <u>Note</u> :-String value must be enclosed within single quotes('').<br/>
+        <u>Ex</u> :-<br/>
+        <b>INSERT INTO </b>friends <b>VALUES</b> ('rahul kumar','m','gaya',9934320778);<br/>
+        OUTPUT - 1 Row created<br/>
+        <b>INSERT INTO</b> students <b>VALUES</b> ('neha kumari',10,45,56,23,56);
+        <hr/>
+        <h1>View records of table :-</h1>
+        <b>SELECT -</b> This command is used to view the records of table.<br/>
+        <u>Syntax</u> :-
+        <p>SELECT * FROM tableName ;</p>
+        <u>Ex</u> :-<br/>
+        <b>SELECT * FROM</b> friends;<br/>
+        <b>SELECT * FROM</b> students;
+        <h2>Inserting specific fields value in table :-</h2>
+        <u>Syntax</u> :-
+        <p>INSERT INTO tableName[(fieldName[,fieldName,...])] VALUES(fieldValuesSepratedByComma);</p>
+        <hr/>
+        <h1>Creating new user in oracle :-</h1>
+        <u>Syntax</u> :-
+        <p>CREATE USER userName IDENTIFIED BY password;</p>
+        <u>Ex</u> :-<br/>
+        <b>CREATE USER</b> rahul <b>IDENTIFIED BY</b> rahul12345;<br/>
+        message: new user created<br/>
+        After Creating user grant access to that use as:<br/>
+        <p>GRANT DBA TO userName;</p>
+        <h2>Change password of user :-</h2>
+        <u>Syntax</u> :-
+        <p>ALTER USER userName IDENTIFIED BY new password;</p>
+        <hr/>
+        <h1>View records of table :-</h1>
+        <u>Syntax</u> :-
+        <p>SELECT {columnName[,columnName]|*} FROM tableName;</p>
+        <i>{ } =></i> Is not part of syntax.<br/>
+        <i>{ } =></i> Represents mandatory valur.<br/>
+        <i>| =></i> or value.<br/>
+        <u>Ex</u> :-<br/> x | y | z => Any one value should be used.
+        <p>Here ( * ) represents all columns.</p>
+        <hr/>
+        <h1>Deleting table :-</h1>
+        <b>DROP TABLE -</b> This command is used to delete the pre-created tables. It will delete table with its records.<br/>
+        <u>Syntax</u> :-
+        <p>DROP TABLE tableName;</p>
+        <u>Ex</u> :-<br/>
+        <b>DROP TABLE</b> students;
+        <hr/>
+        <h1>Deleting user ( only in oracle ) :-</h1>
+        <b>ALTER TABLE -</b> This command is used to modify the structure of table.
+        <h2>Add new column to table :-</h2>
+        <u>Syntax</u> :-
+        <p>ALTER TABLE tableName ADD columnName type [(size)];</p>
+        or,
+        <p>ALTER TABLE tableName ADD (columnName type[(size)] [,columnName[(size)]]);</p>
+        <h2>Modifying type of size of columns :-</h2>
+        <u>Syntax</u> :-
+        <p>ALTER TABLE tableName MODIFY pre-created columnName type(size);</p>
+        <h2>Deleting column of table :-</h2>
+        <u>Syntax</u> :-
+        <p> ALTER TABLE tableName DROP COLUMN columnName;</p>
+        <hr/>
+        <h1>Updating record(s) in table :-</h1>
+        <b>UPDATE -</b> This command is use to update record(s) in table.<br/>
+        or,<br/>
+        This command will sets the given value in specified field in rows that satisfies the condition.<br/>
+        <u>Syntax</u> :-<br/>
+        <p>UPDATE tableName SET fieldName = value [WHERE condition];</p>
+        <u>Ex</u> :-<br/>
+        <b>UPDATE </b>result <b>SET</b> marks=90 <b>WHERE</b> roll=10;
+        <hr/>
+        <h1>Deleting records from table :-</h1>
+        <b>DELETE -</b>This command is used to delete records from table.<br/>
+        <u>Syntax</u> :-
+        <p>DELETE FROM tableName [WHERE condition];</p>
+        <u>Ex</u> :-<br/>
+        <b>DELETE FROM</b> result <b>WHERE</b> roll=10;<br/>
+        It will delete all records having roll value 10.
+        <p>DELETE FROM result;</p>
+        It will delete  all records of table.
+        <hr/>
+        <h1>Deleting all records of table :-</h1>
+        <b>TRUNCATE -</b> This command is used to delete all record(s) of table. This command <b>EMPTY</b> the table.<br/>
+        <u>Syntax</u> :-
+        <p>TRUNCATE TABLE tableName;</p>
+        All records will be deleted. Table will be empty.
+        <hr/>
+        <h1>Deleting the table :-</h1>
+        <b>DROP TABLE -</b> This command is used to delete the table.<br/>
+        <u>Syntax</u> :-
+        <p>DROP TABLE tableName;</p>
+        <u>Ex</u> :-<br/>
+        <b>DROP TABLE</b> result;
+        <hr/>
+        <h1>Fetch record(s) of table :-</h1>
+        <b>SELECT -</b> Used to fetch records from table.<br/>
+        <u>Syntax</u> :-
+        <p>SELECT columnName ToBeFetch FROM tableName;</p>
+        <u>Ex</u> :-<br/>
+        <b>SELECT</b> srno <b>FROM</b> students;<br/>
+        it will list serial number of all records.<br/>
+        <b>SELECT</b> srno, name, class <b>FROM</b> students;<br/>
+        it will list serialNumber, name and class of all records.<br/>
+        <b>SELECT</b> srno, name, class, roll <b>FROM</b> students;<br/>
+        it will list serialNumber, name, class and roll (i.e. all columns) of all records in table.<br/>
+        <b>SELECT * FROM</b> students;<br/>
+        it will list all columns of all records in table.
+        <hr/>
+        <h1>Selecting specific record(s) from table (Filtering table) :-</h1>
+        <u>Syntax</u> :-
+        <p>SELECT columnName TOFetch | * FROM tableName [WHERE condition];</p>
+        it will list all records for which condition will be true.<br/>
+        <u>Ex</u> :-<br/>
+        <b>SELECT * FROM</b> students <b>WHERE</b> roll &lt; 50;<br/>
+        it will list all records which roll number will be less than 50.
+        <hr/>
+        <h1>Fetching records in sorted order :-</h1>
+        <u>Syntax</u> :-
+        <p>SELECT {columnName | *} FROM tableName [WHERE condition] [ORDER BY columnName [ASC | DESC] [,columnName [ASC | DESC],...]];</p>
+        <hr/>
+        <h1>Relational operator in SQl :-</h1>
+        <ol>
+            <li> = Equality operator</li>
+            <li>&lt; &gt; Not equal to</li>
+            <li>&lt;</li>
+            <li>&lt; =</li>
+            <li>&gt;</li>
+            <li>&gt; =</li>
+            Above all operator works with number data only = operator can be used with string data.
+
+            <li>Like operator</li>
+            <li>In operator</li>
+            <li>Between operator</li>
+        </ol>
+        <h2>Like operator :-</h2>
+        <b>Like</b> operator is used with <b>strino</b> match pattern.<br/>
+        <b>Like</b> operator is uses two wildcard character <b>( _ , % )</b>.<b> _</b> represent a single character.<b> %</b> represents zero, one or more than one characters.<br/>
+        <b>name like ' _ '</b> -> it will true for all records having name field one character value.<br/>
+        <b>name like ' _ _ '</b> -> it will true for records which name field has exact 2 character value.<br/>
+        <b>name like ' a _ '</b> -> it will for records which name field value beings with ' a ' and must  be exact 2 character value.<br/>
+        <b>name like ' a % '</b>-> it will true for records which name field value beigins with symbol ' a '. 
+        
+
+    
+    </body>
+</html>
